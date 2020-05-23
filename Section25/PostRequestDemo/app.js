@@ -21,8 +21,8 @@ app.get("/friends", function(req,res){
 
 app.post("/addfriend", function(req,res){
 	var newFriends = req.body.newfriend;
-	friends.push(newFriends)
-	res.redirect("/friends")
+	friends.push(newFriends);
+	res.redirect("/friends");
 })
 
 app.listen(3000,function(){
