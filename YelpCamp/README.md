@@ -30,7 +30,13 @@
 	* Add description to our campground model
 	* Show db.collection.drop()
 	* Add a show route/template
-* 
+* Refactor mongoose code
+	* Create a models directory
+	* Use module.expports
+	* Require everything correctly
+* Add Seeds File
+	* Add a seed.js file
+	* Run the seeds file every time the server starts
 	
 
 
