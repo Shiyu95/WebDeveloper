@@ -1,6 +1,5 @@
 #YelpCamp
 
-#v1
 * Add Landing Page
 * Add Campgrounds Page that lists all campgrounds
 	* Name
@@ -20,7 +19,7 @@
 	* Add a navbar to all templates
 	* Style the new campground form
 
-#v2
+
 * Add Mongoose
 	* Install and configure mongoose
 	* Setup campground model
@@ -34,9 +33,54 @@
 	* Create a models directory
 	* Use module.expports
 	* Require everything correctly
+
+
+
 * Add Seeds File
 	* Add a seed.js file
 	* Run the seeds file every time the server starts
-	
+* Add the Comment mode
+	* make our errors go away
+	* Dispaly comments on campground show page
+
+
+* Comment New/Create
+	* nested routes
+	* add the comment new and create routes
+	* add the new comment form
+index     /campgrounds
+new  	  /campgrounds/new
+create    /campgrounds
+show 	  /campgrounds/:id
+
+
+new   	  campgrounds/:id/comments/new    GET        //nasted routes
+create    campgrounds/:id/comments        POST	
+
+
+
+* Style Show Page
+	* Add sidebar to show page
+	* Display comments nicely
+	* Add public directory
+	* Add custom stylesheet
+
+
+* Add User Model
+	* Install all packages for auth
+	* Define user model
+
+	* Configure Passport
+	* Add register routes
+	* Add register template 
+
+
+
+
+
+
+
+
+
 
 
