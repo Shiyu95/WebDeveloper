@@ -7,21 +7,30 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand"  href="/">YelpCamp</a>
+				<a class="navbar-brand"  href="/">YelpCamp </a>
 			</div>
 
-			<div class="collapse navbar-collapse justify-content-end">
-				<ul class="nav navbar-nav justify-content-end">
-					<li class="nav-item"><a class="nav-link" href="/">Login</a></li>
-					<li class="nav-item"><a class="nav-link" href="/">Sigh up</a></li>
-					<li class="nav-item"><a class="nav-link" href="/">Logout</a></li>
+			<nav class="navbar bg-light navbar-expand-sm justify-content-end">
+				<ul class="navbar-nav">
+					<% if(!currentUser){ %>
+						<li class="nav-item" ><a class="nav-link" href="/login">Login</a></li>
+					<li class="nav-item" ><a class="nav-link" href="/register">Sign up</a></li>
+				<% 	}else{   %>
+					<li class="nav-item"><a class="nav-link" href=""> Signed In As <%= currentUser.username%>  </a></li>
+					<li class="nav-item" ><a class="nav-link" href="/logout">Logout</a></li>
+
+			<%}  %>
+
+
+					
+					
 					
 				</ul>
 				
-			</div>
+			</nav>
 		</div>
 	
 	</nav>

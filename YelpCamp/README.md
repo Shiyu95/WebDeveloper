@@ -70,9 +70,23 @@ create    campgrounds/:id/comments        POST
 	* Install all packages for auth
 	* Define user model
 
+* Register
 	* Configure Passport
 	* Add register routes
 	* Add register template 
+
+* Login
+	* add login routes
+	* add login template
+
+* Logout/Navbar
+	* add logout route
+	* prevent user from adding a comment if not signed in
+	* add links to navar
+	* show /hide auth links correctly
+
+* Show/Hide Links
+	* show/hide auth links in navbar
 
 
 
