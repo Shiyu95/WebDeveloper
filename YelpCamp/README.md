@@ -92,6 +92,22 @@ create    campgrounds/:id/comments        POST
 
 
 
+* Refactor the routes
+	* use express router to reoragnize all routes
+
+* Users + Comments
+	* Associate users and comments
+	* save author's name to a comment automatically
+
+
+* User/Campgrounds
+	* prevent an unauthenticated user from creating a campground
+	* save username id to newly created campground
+
+
+
+
+
 
 
 
