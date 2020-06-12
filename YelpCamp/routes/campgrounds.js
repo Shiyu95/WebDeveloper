@@ -3,6 +3,7 @@ var router = express.Router();
 var Campground = require("../models/campground");
 
 
+
 //Index - show a list of campgrounds
 router.get("/",function(req,res){
 
@@ -59,16 +60,60 @@ router.get("/new", isLoggedIn, function(req,res){
 
 router.get("/:id", function(req, res){
     //find the campground with provided ID
-    Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
+     Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
         if(err){
             console.log(err);
         } else {
-            console.log(foundCampground)
+            //console.log(foundCampground);
+            //console.log(foundCampground.author.id);
             //render show template with that campground
             res.render("campgrounds/show", {campground: foundCampground});
         }
     });
 });
+
+
+
+//Edit Campgrounds route
+router.get("/:id/edit", checkCampgroundOwnership, function(req,res){ 
+	Campground.findById(req.params.id, function(err,foundCampground){		
+		res.render("campgrounds/edit", {campground: foundCampground});	
+		});
+	//otherwise redirect
+	//if not, redirect
+});
+
+//Update campground route
+
+router.put("/:id",checkCampgroundOwnership, function(req,res){
+	//find and update the correct campground
+	Campground.findOneAndUpdate(req.params.id, req.body.campground, function(err,updatedCampground){
+		if(err){
+			res.redirect("/campgrounds");
+		}else{
+			 res.redirect("/campgrounds/" + req.params.id);
+		}
+	});
+
+	//redirect somewhere show page
+});
+
+
+
+
+//delete campground route
+router.delete("/:id", checkCampgroundOwnership,function(req,res){
+	Campground.findByIdAndRemove(req.params.id,function(err){
+		if(err){
+			res.redirect("/campgrounds");
+		}else{
+			res.redirect("/campgrounds");
+		}
+	});
+});
+
+
+
 
 
 
@@ -80,6 +125,29 @@ function isLoggedIn(req,res,next){
     return next();
   }
   res.redirect("/login");
+}
+
+
+function checkCampgroundOwnership(req,res,next){
+if(req.isAuthenticated()){
+		 
+		Campground.findById(req.params.id, function(err,foundCampground){
+			if(err){
+			res.redirect("back");
+			}else{
+			//does user own the campground?
+			// console.log(foundCampground.author.id);//String
+			// console.log(req.user._id);//mongoose object
+			if(foundCampground.author.id.equals(req.user._id)){
+				next();
+			}else{
+			 	res.redirect("back");
+			}
+			}
+		});
+	}else{
+		res.redirect("back");//pervious page they are
+	}
 }
 
 

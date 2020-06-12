@@ -109,6 +109,45 @@ create    campgrounds/:id/comments        POST
 
 
 
+* Editing campgrounds
+	* add method-override
+	* add edit route for Campgrounds
+	* add link to edit page
+	* add update route
+	* fix $set problem
+
+* Deleting Campground
+	* add Destroy route
+	* add delete button
+
+* Authorization : campgrounds
+	* user can only edit his/her campgrounds
+	* user can only delete his/her campgrounds
+	* hide/show edit and delete button
+	* refactor middleware
+
+* Editing Comments
+	* add edit route for comments
+	* add edit button
+	* add update route
+
+* Deleting Comments
+	* add delete route
+	* add delete button
+
+* Authorization : comments
+	* user can only edit his/her comments
+	* user can only delete his/her comments
+	* hide/shoe edit and delete button
+	* refactor middleware
+
+
+
+
+
+
+
+
 
 
 
