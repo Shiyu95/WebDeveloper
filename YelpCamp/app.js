@@ -33,7 +33,7 @@ app.set("view engine","ejs");
 
 
 //PASSPORT configuration
-app.use(require("express-session")({
+app.use(require("express-session")({   
 	secret:"momo is very cute",
 	resave:false,
 	saveUninitialized:false
