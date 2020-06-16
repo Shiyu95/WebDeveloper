@@ -27,13 +27,14 @@ router.get("/",function(req,res){
 router.post("/", middleware.isLoggedIn, function(req,res){
 	//get data form form to array
 	var name = req.body.name;
+	var price = req.body.price;
 	var image = req.body.image;
 	var desc = req.body.description;
 	var author = {
 		id:req.user._id,
 		username:req.user.username
 	}
-	var newCampground = {name: name, image: image, description:desc, author:author}
+	var newCampground = {name: name, price:price, image: image, description:desc, author:author}
 	
 
 	//campgrounds.push(newCampground);
@@ -41,6 +42,7 @@ router.post("/", middleware.isLoggedIn, function(req,res){
 	//create a new campground and save to db
 	Campground.create(newCampground,function(err,newlyCreated){
 		if(err){
+			
 			console.log(err);
 		}else{
 			console.log(newlyCreated);

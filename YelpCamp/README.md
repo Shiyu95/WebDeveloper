@@ -152,6 +152,14 @@ Comment Destroy Route: /campgrounds/:id/comments/:comment_id
 
 
 
+* Adding in Flash
+	* Demo working version
+	* install and configure connect-flash
+	* and bootstrap alerts to header
+
+
+
+
 
 
 
