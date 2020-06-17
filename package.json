@@ -1,0 +1,20 @@
+{
+  "name": "webdevelopercourse",
+  "version": "1.0.0",
+  "description": "practice for Web development technologies:HTML5, CSS3, JavaScript, Bootstrap 4, SemanticUI, DOM Manipulation, jQuery,  Unix(Command Line) Commands,  NodeJS,  NPM,  ExpressJS,  REST,  MongoDB,  Database Associations,  Authentication,  PassportJS,  Authorization",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shiyu95/WebDeveloper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shiyu95/WebDeveloper/issues"
+  },
+  "homepage": "https://github.com/Shiyu95/WebDeveloper#readme"
+}
